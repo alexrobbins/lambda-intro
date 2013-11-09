@@ -1,9 +1,9 @@
 # Pain Points in Big Data
 ## And an Introduction to the Lambda Architecture
 
-Alex Robbins
-Chris Risenhoover
-Clifton King
+- Alex Robbins
+- Chris Risenhoover
+- Clifton King
 
 ---
 
@@ -52,8 +52,8 @@ ingestion
 # Big Pain
 ## Pain Points in Big Data
 
-Alex Robbins - alexander.j.robbins@gmail.com
-Chris Risenhoover - chrisrisenhoover@gmail.com
-Clifton King - cliftonk@gmail.com
+- Alex Robbins - alexander.j.robbins@gmail.com
+- Chris Risenhoover - chrisrisenhoover@gmail.com
+- Clifton King - cliftonk@gmail.com
 
 - https://github.com/alexrobbins/lambda-intro
