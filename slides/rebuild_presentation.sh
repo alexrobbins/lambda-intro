@@ -1,6 +1,5 @@
 printf "%b" "Rebuilding..."
 mdpress presentation.md
-cp -r images/ presentation
 printf "%b" "Done\n"
 printf "%b" "Watching presentation.md\n"
 while :
