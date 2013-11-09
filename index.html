@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/reset.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="css/favicon.png" />
+    <link rel="apple-touch-icon" href="css/apple-touch-icon.png" />
+    <!-- Code Prettifier: -->
+<link href="css/highlight.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="css/style.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,300,400,800' rel='stylesheet' type='text/css'>    
+
+
+  </head>
+
+  <body>
+  <div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+    <div id="impress">
+    <div class='step' >
+    
+<h1>Pain Points in Big Data</h1>
+
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;And</h2>
+
+<h1>Lambda Architecture</h1>
+
+<p>&nbsp;</p>
+
+<p>DFW-Clojure Meetup</p>
+</div>
+      <div class='step' >
+    
+<h1>Pain Points in Big Data</h1>
+</div>
+      <div class='step' >
+    
+<h2>Pain Point:</h2>
+
+<h1>Data Persistence</h1>
+</div>
+      <div class='step' >
+    
+<h2>Data Persistence</h2>
+
+<p>Disk failure</p>
+</div>
+      <div class='step' >
+    
+<h2>Data Persistence</h2>
+
+<p>Human failure</p>
+</div>
+      <div class='step' >
+    
+<h2>Data Persistence</h2>
+
+<p>Overwritten data (design failure)</p>
+</div>
+      <div class='step' >
+    
+<h1>Fixing Persistence</h1>
+
+<ul>
+<li>Append-only data storage</li>
+<li>Never delete input</li>
+<li>Never overwrite input</li>
+<li>Redundant storage</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>Pain Point:</h2>
+
+<h1>Data Size</h1>
+</div>
+      <div class='step' >
+    
+<h2>Data Size</h2>
+
+<p>Too much data to fit on one drive</p>
+</div>
+      <div class='step' >
+    
+<h2>Data Size</h2>
+
+<p>Not helped by append-only policies</p>
+</div>
+      <div class='step' >
+    
+<h2>Data Size</h2>
+
+<p>Sharding</p>
+</div>
+      <div class='step' >
+    
+<h2>Data Size</h2>
+
+<p>Inconsistency after sharding/replication</p>
+</div>
+      <div class='step' >
+    
+<h1>Fixing Data Size</h1>
+
+<ul>
+<li>Use a distributed file system</li>
+<li>HDFS</li>
+<li>S3</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>Pain Point:</h2>
+
+<h1>Queries</h1>
+</div>
+      <div class='step' >
+    
+<h2>Queries</h2>
+
+<p>Data lives in many places</p>
+</div>
+      <div class='step' >
+    
+<h2>Queries</h2>
+
+<p>Data is too big to process in real time</p>
+</div>
+      <div class='step' >
+    
+<h2>Queries</h2>
+
+<p>Data keeps coming in</p>
+</div>
+      <div class='step' >
+    
+<h1>Fixing Queries</h1>
+
+<h1>&nbsp;</h1>
+</div>
+      <div class='step' >
+    
+<h1>Fixing Queries</h1>
+
+<h1>???</h1>
+</div>
+      <div class='step' >
+    
+<h1>Options:</h1>
+</div>
+      <div class='step' >
+    
+<h1>Give Up?</h1>
+
+<h2>Go back to smaller data</h2>
+</div>
+      <div class='step' >
+    
+<h1>Press Forward</h1>
+
+<h2>Gird your loins</h2>
+</div>
+      <div class='step' >
+    
+<h1>Lambda Architecture</h1>
+
+<h2>The Solution to Our Problems</h2>
+
+<p>&nbsp;</p>
+
+<p>Caveat: This is how I understand the Lambda Architecture from Nathan Marz&#39;s excellent, half-completed book <em>Big Data</em>.</p>
+</div>
+      <div class='step' >
+    
+<h1><strong>Batch Layer</strong></h1>
+
+<h1>Serving Layer</h1>
+
+<h1>Speed Layer</h1>
+
+<h1>Data Ingestion</h1>
+
+<h1>Answer Queries</h1>
+</div>
+      <div class='step' >
+    
+<h1>Batch Layer</h1>
+
+<ul>
+<li>Data format</li>
+<li>Data storage</li>
+<li>Data processing</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Data Format</h1>
+
+<ul>
+<li>Thrift</li>
+<li>Json</li>
+<li>edn</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Data Storage</h1>
+
+<ul>
+<li>HDFS</li>
+<li>S3</li>
+<li>Append only!</li>
+<li>Redundant</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Data Processing</h1>
+
+<ul>
+<li>Hadoop</li>
+<li>Cascalog</li>
+<li>Dump output as something the serving layer understands.</li>
+<li>Make functions idempotent on input, so that receiving the same input twice doesn&#39;t break things.</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Batch Layer</h1>
+
+<h1><strong>Serving Layer</strong></h1>
+
+<h1>Speed Layer</h1>
+
+<h1>Data Ingestion</h1>
+
+<h1>Answer Queries</h1>
+</div>
+      <div class='step' >
+    
+<h1>Serving Layer</h1>
+
+<ul>
+<li>Read-only database</li>
+<li>Answer queries for the range from the beginning of time until the last batch job</li>
+<li>elephantdb</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Batch Layer</h1>
+
+<h1>Serving Layer</h1>
+
+<h1><strong>Speed Layer</strong></h1>
+
+<h1>Data Ingestion</h1>
+
+<h1>Answer Queries</h1>
+</div>
+      <div class='step' >
+    
+<h1>Speed Layer</h1>
+
+<ul>
+<li>Accumulate temporary state</li>
+<li>Answer queries for the time since the last batch job</li>
+<li>Drop state once a batch job makes it redundant.</li>
+<li>If corrupt, nuke it, slightly degrading service for a short while.</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Batch Layer</h1>
+
+<h1>Serving Layer</h1>
+
+<h1>Speed Layer</h1>
+
+<h1><strong>Data Ingestion</strong></h1>
+
+<h1>Answer Queries</h1>
+</div>
+      <div class='step' >
+    
+<h1>Data Ingestion</h1>
+
+<ul>
+<li>Accept data from $SOURCE, send it to both the Speed and the Batch Layers.</li>
+<li>Storm could handle this, splitting the input stream to both Speed and Batch.</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Batch Layer</h1>
+
+<h1>Serving Layer</h1>
+
+<h1>Speed Layer</h1>
+
+<h1>Data Ingestion</h1>
+
+<h1><strong>Answer Queries</strong></h1>
+</div>
+      <div class='step' >
+    
+<h1>Answer Queries</h1>
+
+<ul>
+<li>To answer a query you need to merge the responses from the Serving Layer and the Batch Layer.</li>
+<li>Make sure you aren&#39;t double counting data that is somehow in both places.</li>
+<li>Storm provides a DRPC server that makes this easier.</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Batch Layer</h1>
+
+<h1>Serving Layer</h1>
+
+<h1>Speed Layer</h1>
+
+<h1>Data Ingestion</h1>
+
+<h1>Answer Queries</h1>
+</div>
+      <div class='step' >
+    
+<h1>The Plan</h1>
+
+<ul>
+<li>Work through the different parts of the Lambda Architecture</li>
+<li>Learn the different technologies at each layer</li>
+<li>Develop a sample application</li>
+<li>???</li>
+<li>Profit</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Pain Points in Big Data</h1>
+
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;And</h2>
+
+<h1>Lambda Architecture</h1>
+
+<ul>
+<li><a href="mailto:alexander.j.robbins@gmail.com">alexander.j.robbins@gmail.com</a></li>
+<li><p>Clifton King <a href="mailto:cliftonk@gmail.com">cliftonk@gmail.com</a></p></li>
+<li><p><a href="https://github.com/alexrobbins/lambda-intro">https://github.com/alexrobbins/lambda-intro</a></p></li>
+<li><p><a href="http://www.databasetube.com/database/big-data-lambda-architecture/">http://www.databasetube.com/database/big-data-lambda-architecture/</a></p></li>
+</ul>
+
+      </div>
+    <script src="js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>
+    
