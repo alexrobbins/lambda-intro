@@ -182,7 +182,7 @@ Caveat: This is how I understand the Lambda Architecture from Nathan Marz's exce
 
 ---
 # Answer Queries
-- To answer a query you need to merge the responses from the Serving Layer and the Batch Layer.
+- To answer a query you need to merge the responses from the Speed Layer and the Batch Layer.
 - Make sure you aren't double counting data that is somehow in both places.
 - Storm provides a DRPC server that makes this easier.
 
